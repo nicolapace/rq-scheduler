@@ -104,7 +104,7 @@ This is how you do it
 .. code-block:: python
 
     scheduler.schedule(
-        scheduled_time=datetime.utcnow(), # Time for first execution, in UTC timezone
+        scheduled_time=datetime.now(UTC).replace(tzinfo=None), # Time for first execution, in UTC timezone
         func=func,                     # Function to be queued
         args=[arg1, arg2],             # Arguments passed into function when executed
         kwargs={'foo': 'bar'},         # Keyword arguments passed into function when executed

@@ -52,5 +52,5 @@ def rationalize_until(until=None):
     elif isinstance(until, datetime):
         until = to_unix(until)
     elif isinstance(until, timedelta):
-        until = to_unix((datetime.utcnow() + until))
+        until = to_unix((datetime.now(dateutil.tz.UTC).replace(tzinfo=None) + until))
     return until
